@@ -105,7 +105,7 @@ static Token* tokenize(char* p) {
     return head.next;
 }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char **argv) {
     if(argc != 3) {
         fprintf(stderr, "Usage: %s, <bf file> <output file>\n", argv[0]);
         return 1;
