@@ -74,16 +74,16 @@ static Token* tokenize(char* p) {
     while(*p) {
         // printf("DEBUG: at character %lu\n", p - s);
         TokenKind kind;
-        char inst;
+        char inst = *p;
         switch(*p) {
-            case '<': kind = TK_PTR_L; inst = '<'; break;
-            case '>': kind = TK_PTR_R; inst = '>'; break;
-            case '+': kind = TK_ADD; inst = '+'; break;
-            case '-': kind = TK_SUB; inst = '-'; break;
-            case '[': kind = TK_LOOP_S; inst = '['; break;
-            case ']': kind = TK_LOOP_E; inst = ']'; break;
-            case ',': kind = TK_IN; inst = ','; break;
-            case '.': kind = TK_OUT; inst = '.'; break;
+            case '<': kind = TK_PTR_L; break;
+            case '>': kind = TK_PTR_R; break;
+            case '+': kind = TK_ADD; break;
+            case '-': kind = TK_SUB; break;
+            case '[': kind = TK_LOOP_S; break;
+            case ']': kind = TK_LOOP_E; break;
+            case ',': kind = TK_IN; break;
+            case '.': kind = TK_OUT; break;
             default: p++; continue;
         }
         // printf("DEBUG: type %d\n", kind);
